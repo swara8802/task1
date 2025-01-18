@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Test Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Arial", sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        #parent {
+            display: flex;
+            height: 100vh;
+        }
+
+        #left {
+            width: 50%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #right {
+            width: 50%;
+            background: url('https://images.unsplash.com/photo-1735064812359-b0dde30d4323?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center center/cover no-repeat;
+
+            background-size: cover;
+            display: flex;
+            align-items: flex-end;
+            padding: 40px;
+            color: white;
+        }
+
+        #right::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        #right-content {
+            z-index: 1;
+            text-align: right;
+        }
+
+        #right-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        #right-content p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        #header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        #header div {
+            font-size: 1rem;
+        }
+
+        #title h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        #title p {
+            text-align: center;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        #google-login-button {
+            border: 2px solid #1e1e1e91;
+            border-radius: 8px;
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: 30px;
+            max-width: 300px;
+            width: 100%;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        #google-login-button:hover {
+            transform: scale(1.05);
+            box-shadow: 5px 4px 2px 0px #0000ff2b;
+        }
+
+        #seperator {
+            width: 60%;
+            text-align: center;
+            margin: 15px auto;
+            position: relative;
+        }
+
+        #seperator::before {
+            content: "";
+            height: 1px;
+            width: 100%;
+            background-color: #ccc;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: -1;
+        }
+
+        #seperator span {
+            background: white;
+            padding: 0 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .input_box {
+            margin: 15px auto;
+            width: 60%;
+            position: relative;
+        }
+
+        .input_box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .input_box label {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background-color: white;
+            font-size: 0.8rem;
+            color: #666;
+            padding: 0 5px;
+        }
+
+        #login-button {
+            width: 60%;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        #login-button:hover {
+            background-color: #333;
+        }
+
+        #signup {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+
+        #signup a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        #signup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <!-- Left Section -->
+        <div id="left">
+            <div id="header">
+                <div>Logo</div>
+                <div>
+                    <a href="#">Sign up</a> | <a href="#">Log in</a>
+                </div>
+            </div>
+            <div id="title">
+                <h1>Hi There!</h1>
+                <p>Welcome, Community Dashboard</p>
+            </div>
+            <div id="google-login-button">
+                Log in with Google
+            </div>
+            <div id="seperator">
+                <span>or</span>
+            </div>
+            <div class="input_box">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" placeholder="Enter your email" />
+            </div>
+            <div class="input_box">
+                <label for="password">Your Password</label>
+                <input type="password" id="password" placeholder="Enter your password" />
+            </div>
+            <button id="login-button">Log in</button>
+            <div id="signup">
+                Don’t have an account? <a href="#">Sign up</a>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div id="right">
+            <div id="right-content">
+                <h1>Go wherever you want</h1>
+                <p>Space is full of wonders!</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
